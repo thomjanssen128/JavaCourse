@@ -8,5 +8,6 @@ public class MyFirstClass {
     public static void main(String[] args) { // main methode
         System.out.println("Hello, World!");
         System.out.println("de tweede lijn");
+        System.out.println("de derde lijn");
     }
 }
