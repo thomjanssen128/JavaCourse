@@ -1,4 +1,4 @@
-package nl.thom;
+package nl.thom.h2;
 
 public class MyFirstClass {
 

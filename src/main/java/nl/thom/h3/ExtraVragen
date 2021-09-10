@@ -1,0 +1,96 @@
+1. In your own words, explain the difference between static and dynamic typing.
+
+Dynamic typing is that fields can change data type. With static this is not possible.
+Python is dynamic while Java is static.
+
+
+
+2. What's an advantage of using static typing as opposed to dynamic typing?
+
+If a data type never changes that gives a certain level of security. A int will always be an int.
+
+
+
+2. In your own words, explain the difference between primitive and reference types.
+
+Primitive types are build in Java and cant be null. Primitive type start with a lowercase (int, float, boolean, ...)
+PT live in de Stack
+Reference types are more complex, can have more fields, where PT are the value itself. RF start with a cap, so these are classes.
+
+
+
+3. What does the following snippet print? If you think it won't compile, explain why. Don't use your IDE.
+
+public class Main {
+    public static void main(String[] args) {
+        string message = "Hello, world!";
+        System.out.println(message);
+    }
+}
+
+Wont compile, String is with a cap.
+
+
+
+
+
+4. What does the following snippet print? If you think it won't compile, explain why. Don't use your IDE.
+
+public class Main {
+    public static void main(String[] args) {
+        int firstNumber = 1;
+        String secondNumber = "2";
+        System.out.println(firstNumber + secondNumber);
+    }
+}
+
+Nope. inters and strings are not optelable.
+Christian zegt dat er "12" wordt geprint.
+
+
+
+
+5. What does the following snippet print? If you think it won't compile, explain why. Don't use your IDE.
+
+public class Main {
+    public static void main(String[] args) {
+        String short = "BD";
+        String long = "Belastingdienst";
+        System.out.println(short);
+        System.out.println(long);
+    }
+}
+
+Nope. dont use datatypes as variable names
+
+
+
+6. Make a small program that causes a variable of the `int` type to overflow. Then find a way to fix the overflow.
+
+See Primitives
+
+
+
+
+7. In your own words, explain the difference between stack and heap memory.
+
+Stack: PT and the Reference to RT
+Heap: here live the RT, instances of classes
+
+
+
+
+8. Make a small program and create a Weekday enum with logical constants (i.e., the days of the week). In the `main` method, print one of the constants.
+
+Weekdays
+
+
+
+9. Make a small program and create a Trainee class with fields `String firstName` and `String lastName`. In the `main` method, create a new instance of the class, set the first and last name, and print the full name on a single line.
+
+Trainee + TraineeThom
+
+
+
+10. In your own words, explain what garbage collection is.
+If a RT in de HEAP does not have a owner anymore GC will remove it, make memory free
