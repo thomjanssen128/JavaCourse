@@ -1,7 +1,7 @@
 package nl.thom.bank;
 
 public class Bank {
-    int clientIds[] = new int[0];
+    int[] clientIds = new int[0];
     Client[] clients = new Client[0];
 
 
