@@ -43,6 +43,16 @@ public class Bank {
         clientIds = newClientIds;
     }
 
+    public void printBankBalance() {
+        double total = 0;
+        for (Client c : clients) {
+            System.out.printf("%s %s, has %s.\n", c.firstName, c.lastName, c.account.balance);
+            total += c.account.balance;
+        }
+        System.out.println("Total in the bank: " + total);
+
+    }
+
     public Client getClientById(int id) {
         for (Client c : clients) {
             if (c.id == id) {
@@ -52,6 +62,8 @@ public class Bank {
         return null;
 
     }
+
+
 
 
 }

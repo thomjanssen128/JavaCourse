@@ -6,6 +6,7 @@ public class Account {
     double balance;
     double interestRate;
     Client owner;
+    int accountNumber;
 
     public Account() {
         // empty
