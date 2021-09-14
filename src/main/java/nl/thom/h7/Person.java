@@ -15,9 +15,9 @@ public class Person {
         this.gender = Gender.UNKNOWN;
     }
 
-    public int haveBirthday() {
-        this.age++;
-        return this.age;
+    public int haveBirthday() throws PersonDiedException  {
+        //setAge();
+        return 0;
     }
 
     public Gender getGender() {
@@ -38,6 +38,8 @@ public class Person {
                 throw new PersonDiedException("Im getting too old for this shit.");
             } catch (PersonDiedException e) {
                 e.printStackTrace();
+                //this.age = age;
+
             }
         } else {
             this.age = age;

@@ -1,7 +1,8 @@
 package nl.thom.h7;
 
-public class PersonDiedException extends Exception {
-    public PersonDiedException(String errorMessage) {
-        super(errorMessage);
-    }
+public class PersonDiedException extends Exception { //checked exception
+//    public class PersonDiedException extends RuntimeException { //runtime exception
+        public PersonDiedException(String errorMessage) {
+            super(errorMessage);
+        }
 }

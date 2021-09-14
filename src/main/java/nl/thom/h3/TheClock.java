@@ -7,7 +7,9 @@ public class TheClock {
         int add = 80;
         int totalHours = start + add;
         int daysPassed = totalHours % HOURS_DAY;
+        int days = totalHours / HOURS_DAY;
 
         System.out.println(daysPassed);
+        System.out.println(days);
     }
 }

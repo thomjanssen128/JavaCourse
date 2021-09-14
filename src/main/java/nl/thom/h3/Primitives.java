@@ -21,9 +21,9 @@ public class Primitives {
         long longMin = (long) -(pow(2, BITS_LONG - 1));
         long longMax = (long) (pow(2, BITS_LONG - 1) - 1);
         double doubleMax = (double) (pow(2, BITS_DOUBLE - 1) - 1);
-        double doubleMin = doubleMax + 1;
+        double doubleMin = (double)-(pow(2, BITS_DOUBLE - 1));
         float floatMax = (float) (pow(2, BITS_FLOAT - 1) - 1);
-        float floatMin = floatMax + 1;
+        float floatMin = (float)-(pow(2, BITS_FLOAT - 1));
 
         char charMin = (char) 0; // er zijn geen negatieve waardes in unicode
         char charMax = (char) (pow(2, BITS_CHAR) - 1);
@@ -37,7 +37,7 @@ public class Primitives {
         System.out.println(intMax);
         System.out.println(longMin);
         System.out.println(longMax);
-        System.out.println(doubleMin);
+        System.out.println('d' + doubleMin);
         System.out.println(doubleMax);
         System.out.println(floatMin);
         System.out.println(floatMax);

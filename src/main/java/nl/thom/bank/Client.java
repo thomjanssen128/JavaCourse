@@ -8,11 +8,7 @@ public class Client {
     Account account;
 
     public Client(String firstName, String lastName, int id) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.id = id;
-
-        account = new Account();
+        this(firstName, lastName, id, 0);
     }
 
     public Client(String firstName, String lastName, int id, double balance) {
