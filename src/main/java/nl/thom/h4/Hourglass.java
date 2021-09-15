@@ -4,12 +4,10 @@ import java.util.Scanner;
 
 public class Hourglass {
     public static void main(String[] args) throws EvenNumberException, DigitsExeption {
-        //        int n = Integer.parseInt(getNumber());
-        int n = Integer.parseInt(getNumber());
+        int n = Integer.parseInt(getNumber()); // input > int
         if (n % 2 == 0) {
             throw new EvenNumberException("Even numbers are not allowed!");
         }
-
         drawHourglass(n);
     }
 
@@ -23,12 +21,10 @@ public class Hourglass {
                 throw new DigitsExeption("Ik stop ermee!");
             }
             System.out.println("No, no, numbers only!");
-            System.out.print("Enter account number: ");
+            System.out.print("Enter number: ");
             sc.next();
         }
-
         return sc.next();
-
     }
 
     private static void drawHourglass(int n) {
@@ -42,8 +38,7 @@ public class Hourglass {
                 StringBuilder hourglass = new StringBuilder(laag);
                 int index = n - i - 1;
                 hourglass.setCharAt(index, '*');
-                int index2 = i;
-                hourglass.setCharAt(index2, '*');
+                hourglass.setCharAt(i, '*');
 
                 System.out.println(hourglass.toString());
             }

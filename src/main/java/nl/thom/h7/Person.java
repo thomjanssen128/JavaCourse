@@ -16,8 +16,13 @@ public class Person {
     }
 
     public int haveBirthday() throws PersonDiedException  {
-        //setAge();
-        return 0;
+        int age = this.getAge();
+        age++;
+        if (age >= 130) {
+            throw new PersonDiedException("Te oud!");
+        }
+        setAge(age);
+        return age;
     }
 
     public Gender getGender() {
