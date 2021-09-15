@@ -3,6 +3,7 @@ package nl.thom.bank;
 public class App {
     public static void main(String[] args) {
         Bank b = new Bank();
+        System.out.println('\u00d7');
         Client tp = b.makeNewClient("Tom", "Poes", 234);
         Client bb = b.makeNewClient("Bulle", "Bas");
 
@@ -18,7 +19,12 @@ public class App {
 
         System.out.println(b.getClientById(1));
 
+        b.getBankBalance();
         b.printBankBalance();
+
+        tp.account.transfer(bb.account, 20);
+        System.out.println(bb);
+
 
     }
 

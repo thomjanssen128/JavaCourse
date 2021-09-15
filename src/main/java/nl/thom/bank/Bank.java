@@ -3,13 +3,10 @@ package nl.thom.bank;
 import java.util.ArrayList;
 
 public class Bank {
-//    static Client[] clients = new Client[0];
-    static ArrayList<Client> clients = new ArrayList<>();
+    private ArrayList<Client> clients = new ArrayList<>();
 
     public Client makeNewClient(String firstName, String lastName) {
-        int id = getNewClientId();
-        Client c = new Client(firstName, lastName, id);
-        addClientToClientsList(c);
+        Client c = makeNewClient(firstName, lastName, 0);
         return c;
     }
 
@@ -21,52 +18,41 @@ public class Bank {
     }
 
     private void addClientToClientsList(Client c) {
-//        Client[] newClients = new Client[clients.length + 1];
-//        for (int i = 0; i < clients.length; i++) {
-//            newClients[i] = clients[i];
-//        }
-//        newClients[clients.length] = c;
-//        clients = newClients;
         clients.add(c);
     }
 
-
-
-    public static int getNewClientId() {
-        //int[] clientIds = getAllClientsIds();
-        int newId = clients.size();
-        return newId;
+    private int getNewClientId() {
+        return clients.size();
     }
 
-    //    private void addNewClientId(int id) {
-    //        int[] newClientIds = new int[id + 1];
-    //        for (int i = 0; i < id; i++)
-    //            newClientIds[i] = clientIds[i];
-    //        newClientIds[id] = id;
-    //        clientIds = newClientIds;
-    //    }
-
-    public void printBankBalance() {
+    public double getBankBalance() {
+        // prints sum of all accounts
         double total = 0;
         for (Client c : clients) {
-            System.out.printf("%s %s has %s.\n", c.firstName, c.lastName, c.account.balance);
+            // System.out.printf("%s %s has %s.\n", c.firstName, c.lastName, c.account.balance);
             total += c.account.balance;
         }
-        System.out.println("Total in the bank: " + total);
-
+        // System.out.println("Total in the bank: " + total);
+        return total;
     }
 
-    public int[] getAllClientsIds() {
+    public void printBankBalance() {
+        System.out.println("Bank balance: " + getBankBalance());
+    }
 
-        int[] clientIds = new int[clients.size()];
-        for (int i = 0; i < clients.size(); i++) {
-            clientIds[i] = clients.get(i).id;
+    public ArrayList<Integer> getAllClientIds() {
+        ArrayList<Integer> clientIds = new ArrayList<>();
+        // int[] clientIds = new int[clients.size()];
+        for (Client c : clients) {
+            clientIds.add(c.id);
         }
         return clientIds;
     }
 
-    public static Client getClientById(int id) {
+    public Client getClientById(int id) {
+        System.out.println(id);
         for (Client c : clients) {
+            //            System.out.println(c);
             if (c.id == id) {
                 return c;
             }

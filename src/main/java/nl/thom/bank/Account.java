@@ -16,16 +16,22 @@ public class Account {
         this.balance = balance;
     }
 
-    public void withdraw(double amount) {
+    public boolean withdraw(double amount) throws InsufficientFundsException {
         if (amount > balance) {
-            try {
-                throw new InsufficientFundsException("Not enough money in your account.");
-            } catch (InsufficientFundsException e) {
-                e.printStackTrace();
-            }
+            throw new InsufficientFundsException("Not enough money in your account.");
+
         } else {
             balance -= amount;
+            return true;
         }
+    }
+
+    public boolean transfer(Account to, double amount) {
+        boolean sufficientFunds = this.withdraw(amount);
+        if (!sufficientFunds) return false;
+
+        to.balance += amount;
+        return true;
     }
 
     @Override
