@@ -1,20 +1,23 @@
 package nl.thom.bank;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class BankTest {
     Bank targetBank;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         targetBank = new Bank();
+
     }
     //    @Test
     //    public void makeClientWithFirstAndLastName() {
@@ -40,26 +43,40 @@ public class BankTest {
 
     @Test
     public void getClientByIdTest() {
-        Bank bank2 = new Bank();
-        bank2.makeNewClient("Hocus", "Pas", 1);      // id 0
-        bank2.makeNewClient("Tom", "Poes", 2);       // id 1
-        bank2.makeNewClient("Olivier", "Bommel", 3); // id 2
-        Client bommel = bank2.getClientById(2);
+        targetBank.makeNewClient("Hocus", "Pas", 1);      // id 0
+        targetBank.makeNewClient("Tom", "Poes", 2);       // id 1
+        targetBank.makeNewClient("Olivier", "Bommel", 3); // id 2
+        Client bommel = targetBank.getClientById(2);
         //        System.out.println(bank2.getBankBalance());
         assertEquals(2, bommel.id);
     }
 
     @Test
     public void generateTwoAccountsWithBalance10EachGetBankBalance() {
-        Bank bankTestBalance = new Bank();
+        Account a1 = mock(Account.class);
+        Account a2 = mock(Account.class);
 
-//        bankTestBalance.makeNewClient("Hocus", "Pas", 10);      // 0
-//        bankTestBalance.makeNewClient("Tom", "Poes", 10);       // 1
+        // a1.balance = 10;
+        // a2.balance = 10;
+        // dit werkt ook
 
         Client c1 = mock(Client.class);
         Client c2 = mock(Client.class);
 
-        int bankBalance = (int) bankTestBalance.getBankBalance();
+        c1.account = a1;
+        c2.account = a2;
+
+        targetBank.addClientToClientsList(c1);
+        targetBank.addClientToClientsList(c2);
+
+
+        when(c1.account.getBalance()).thenReturn(10d);
+        when(c2.account.getBalance()).thenReturn(10d);
+        // ^ dit moet een functie zijn! niet een field!
+
+        // System.out.println(targetBank.clients.get(0).account.balance);
+
+        int bankBalance = (int) targetBank.getBankBalance();
         assertEquals(20, bankBalance);
     }
 }

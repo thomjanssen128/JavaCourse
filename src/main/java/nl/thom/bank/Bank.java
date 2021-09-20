@@ -3,7 +3,7 @@ package nl.thom.bank;
 import java.util.ArrayList;
 
 public class Bank {
-    private ArrayList<Client> clients = new ArrayList<>();
+    public ArrayList<Client> clients = new ArrayList<>();
 
     public Client makeNewClient(String firstName, String lastName) {
         Client c = makeNewClient(firstName, lastName, 0);
@@ -13,11 +13,11 @@ public class Bank {
     public Client makeNewClient(String firstName, String lastName, double balance) {
         int id = getNewClientId();
         Client c = new Client(firstName, lastName, id, balance);
-        addClientToClientsList(c);
+        // addClientToClientsList(c);
         return c;
     }
 
-    private void addClientToClientsList(Client c) {
+    void addClientToClientsList(Client c) {
         clients.add(c);
     }
 
@@ -30,7 +30,7 @@ public class Bank {
         double total = 0;
         for (Client c : clients) {
             // System.out.printf("%s %s has %s.\n", c.firstName, c.lastName, c.account.balance);
-            total += c.account.balance;
+            total += c.account.getBalance();
         }
         // System.out.println("Total in the bank: " + total);
         return total;

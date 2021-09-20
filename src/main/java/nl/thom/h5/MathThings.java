@@ -1,6 +1,7 @@
 package nl.thom.h5;
 
 import java.util.Arrays;
+import java.util.OptionalDouble;
 
 public class MathThings {
     static int greatest(int a, int b) {
@@ -17,7 +18,6 @@ public class MathThings {
         } else {
             return b;
         }
-
     }
 
     static int greatestL(int... ints) {
@@ -44,5 +44,13 @@ public class MathThings {
         return result;
     }
 
+    static int factorialRecursion(int i) {
+        if (i == 1 || i == 0) return 1;
+        return i * factorialRecursion(i-1);
+    }
+
+    static double average(double... nummers) {
+        return Arrays.stream(nummers).average().orElse(0);
+    }
 
 }

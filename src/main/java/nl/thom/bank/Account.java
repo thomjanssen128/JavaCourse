@@ -1,7 +1,5 @@
 package nl.thom.bank;
 
-import nl.thom.bank.exceptions.InsufficientFundsException;
-
 public class Account {
     double balance;
     double interestRate;
@@ -32,6 +30,10 @@ public class Account {
 
         to.balance += amount;
         return true;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 
     @Override
