@@ -1,4 +1,4 @@
-package nl.thom.h7;
+package nl.thom;
 
 public enum Gender {
     UNKNOWN,
