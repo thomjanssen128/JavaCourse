@@ -1,6 +1,5 @@
 package nl.thom.bank;
 
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,6 +18,9 @@ public class BankTest {
         targetBank = new Bank();
 
     }
+
+    // ook je tests moeten schoon en netjes zijn, dus ook dit refactoren en opschonen.
+
     //    @Test
     //    public void makeClientWithFirstAndLastName() {
     //        String firstName = "Hiep";
@@ -26,7 +28,6 @@ public class BankTest {
     //        Client hh = new Client(firstName, lastName, 33);
     //        assertEquals("HiepHieper", hh.firstName + hh.lastName);
     //    }
-
 
     @Test
     public void make15ClientsAndGetIdNumbersZeroToFourteen() {
@@ -38,8 +39,8 @@ public class BankTest {
         }
         ArrayList<Integer> ids = bank1.getAllClientIds();
         assertEquals(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), ids);
+        // deze test faalt
     }
-
 
     @Test
     public void getClientByIdTest() {
@@ -48,7 +49,7 @@ public class BankTest {
         targetBank.makeNewClient("Olivier", "Bommel", 3); // id 2
         Client bommel = targetBank.getClientById(2);
         //        System.out.println(bank2.getBankBalance());
-        assertEquals(2, bommel.id);
+        assertEquals(2, bommel.id); // faalt
     }
 
     @Test
@@ -68,7 +69,6 @@ public class BankTest {
 
         targetBank.addClientToClientsList(c1);
         targetBank.addClientToClientsList(c2);
-
 
         when(c1.account.getBalance()).thenReturn(10d);
         when(c2.account.getBalance()).thenReturn(10d);

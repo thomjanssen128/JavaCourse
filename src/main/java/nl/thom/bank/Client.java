@@ -1,12 +1,14 @@
 package nl.thom.bank;
 
 public class Client {
-    Bank bank;
+    // waarom niet private?
+    Bank bank; // unused
     String firstName;
     String lastName;
     int id;
     Account account;
 
+    // unused
     public Client(String firstName, String lastName, int id) {
         this(firstName, lastName, id, 0);
     }
