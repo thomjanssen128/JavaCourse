@@ -1,8 +1,9 @@
 package nl.thom.bank;
 
 public class Account {
+    // private?
     double balance;
-    double interestRate;
+    double interestRate; // unused? dan weg.
     Client owner;
     int accountNumber;
 
@@ -24,9 +25,10 @@ public class Account {
         }
     }
 
+    // IDEA: Return value of the method is never used
     public boolean transfer(Account to, double amount) {
-        boolean sufficientFunds = this.withdraw(amount);
-        if (!sufficientFunds) return false;
+        boolean sufficientFunds = this.withdraw(amount); // methods mag je prefixen met this, maar is meestal niet nodig.
+        if (!sufficientFunds) return false; // sufficientFunds kan nooit false worden; hij gooit dan een exception.
 
         to.balance += amount;
         return true;

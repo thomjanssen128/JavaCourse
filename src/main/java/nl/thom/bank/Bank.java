@@ -13,7 +13,7 @@ public class Bank {
     public Client makeNewClient(String firstName, String lastName, double balance) {
         int id = getNewClientId();
         Client c = new Client(firstName, lastName, id, balance);
-        // addClientToClientsList(c);
+        // addClientToClientsList(c); // dit zou wel toegevoegde waarde hebben.
         return c;
     }
 
@@ -29,6 +29,7 @@ public class Bank {
         // prints sum of all accounts
         double total = 0;
         for (Client c : clients) {
+            // unused comments opruimen
             // System.out.printf("%s %s has %s.\n", c.firstName, c.lastName, c.account.balance);
             total += c.account.getBalance();
         }
@@ -49,6 +50,7 @@ public class Bank {
         return clientIds;
     }
 
+    // Mooi dat je een zoekfunctie gemaakt hebt!
     public Client getClientById(int id) {
         System.out.println(id);
         for (Client c : clients) {
@@ -57,8 +59,7 @@ public class Bank {
                 return c;
             }
         }
-        return null;
-
+        return null; // is dit wel handig, null teruggeven?
     }
 
 
