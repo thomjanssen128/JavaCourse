@@ -3,46 +3,29 @@ package nl.thom.overerving;
 //import nl.thom.h7.PersonDiedException;
 
 public class Android extends Human implements Chargeable {
-    public int level = 0;
-
-    public Android() {
-    }
+    public int level;
 
     public Android(String name) {
-        this(name, 314);
+        this(name, 314, 0);
     }
 
     public Android(String name, int age) {
-        this.name = name;
-        setAge(age);
+        this(name, age, 0);
     }
 
-    // public int haveBirthday() throws PersonDiedException {
-    //     int age = getAge();
-    //     age++;
-    //     if (age >= 130) {
-    //         throw new PersonDiedException("Te oud!");
-    //     }
-    //     setAge(age);
-    //     return age;
-    // }
+   public Android(String name, int age, int level) {
+        this.name = name;
+        setAge(age);
+        this.level = level;
+   }
 
-
-    // @Override
-    // public boolean equals(Object b) {
-    //     if (!(b instanceof Person)) return false;
-    //
-    //     Person other = (Person) b;
-    //     return this.name.equals(other.name) &&
-    //             getAge() == other.getAge() &&
-    //             getGender().equals(other.getGender());
-    // }
-    //
-    // @Override
-    // public int hashCode() {
-    //     return this.age * this.name.hashCode() * this.gender.hashCode();
-    // }
-
+   @Override
+   public void setAge(int age) {
+        if (age > 100) {
+            System.out.println("I'm old, not obsolete");
+        }
+        this.age = age;
+   }
 
     @Override
     public String greet() {
@@ -57,5 +40,14 @@ public class Android extends Human implements Chargeable {
 
         level += amount;
         return level;
+    }
+
+    @Override
+    public String toString() {
+        return "Android{" +
+                "level=" + level +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

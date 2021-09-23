@@ -3,7 +3,7 @@ package nl.thom.overerving;
 import nl.thom.Gender;
 //import nl.thom.h7.PersonDiedException;
 
-public class Person extends Human{
+public class Person extends Human {
     Gender gender;
     static int MAX_AGE = 130;
 
@@ -46,11 +46,6 @@ public class Person extends Human{
     }
 
 
-
-    void go() {
-        System.out.println(this);
-    }
-
     // @Override
     // public boolean equals(Object b) {
     //     if (!(b instanceof Person)) return false;
@@ -69,6 +64,6 @@ public class Person extends Human{
 
     @Override
     public String greet() {
-        return "Hello, my name is " + this.name + ". Nice to meet you!";
+        return "Hello, my name is " + name + ". Nice to meet you!";
     }
 }
