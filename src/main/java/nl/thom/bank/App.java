@@ -4,27 +4,24 @@ public class App {
     public static void main(String[] args) {
         Bank b = new Bank();
 
-        Client tp = b.makeNewClient("Tom", "Poes", 234);
-        Client bb = b.makeNewClient("Bulle", "Bas");
+        Client c = new Client();
 
-        System.out.println(tp);
-        System.out.println(bb);
+        b.addClient(c);
 
-        bb.account.balance = 1200;
+        Account a1 = new Account();
+        Account a2 = new Account();
 
-        tp.account.withdraw(34);
-        System.out.println(tp);
-        tp.account.withdraw(999);
-        // System.out.println(tp);
+        c.addAccount(a1);
+        c.addAccount(a2);
 
-        System.out.println(b.getClientById(1));
+        Client c2 = new Client();
 
-        b.getBankBalance();
-        b.printBankBalance();
+        b.addClient(c2);
+        Account A = new Account(234);
+        c2.addAccount(A);
 
-        tp.account.transfer(bb.account, 20);
-        System.out.println(bb);
 
+        System.out.println(b);
 
     }
 

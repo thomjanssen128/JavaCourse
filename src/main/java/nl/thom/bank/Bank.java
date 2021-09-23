@@ -5,19 +5,8 @@ import java.util.ArrayList;
 public class Bank {
     public ArrayList<Client> clients = new ArrayList<>();
 
-    public Client makeNewClient(String firstName, String lastName) {
-        Client c = makeNewClient(firstName, lastName, 0);
-        return c;
-    }
-
-    public Client makeNewClient(String firstName, String lastName, double balance) {
-        int id = getNewClientId();
-        Client c = new Client(firstName, lastName, id, balance);
-        // addClientToClientsList(c);
-        return c;
-    }
-
-    void addClientToClientsList(Client c) {
+    void addClient(Client c) {
+        c.setId(clients.size());
         clients.add(c);
     }
 
@@ -29,8 +18,9 @@ public class Bank {
         // prints sum of all accounts
         double total = 0;
         for (Client c : clients) {
-            // System.out.printf("%s %s has %s.\n", c.firstName, c.lastName, c.account.balance);
-            total += c.account.getBalance();
+            for (Account a : c.accounts) {
+                total += a.getBalance();
+            }
         }
         // System.out.println("Total in the bank: " + total);
         return total;
@@ -61,5 +51,10 @@ public class Bank {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Bank: { \n" +
+                "    clients= \n" + clients +
+                '}';
+    }
 }

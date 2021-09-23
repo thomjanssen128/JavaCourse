@@ -34,22 +34,22 @@ public class BankTest {
         Bank bank1 = new Bank();
         for (int id = 0; id < 15; id++) {
 
-            bank1.makeNewClient("Hocus", "Pas", 11);
+            ;
         }
         ArrayList<Integer> ids = bank1.getAllClientIds();
         assertEquals(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), ids);
     }
 
 
-    @Test
-    public void getClientByIdTest() {
-        targetBank.makeNewClient("Hocus", "Pas", 1);      // id 0
-        targetBank.makeNewClient("Tom", "Poes", 2);       // id 1
-        targetBank.makeNewClient("Olivier", "Bommel", 3); // id 2
-        Client bommel = targetBank.getClientById(2);
-        //        System.out.println(bank2.getBankBalance());
-        assertEquals(2, bommel.id);
-    }
+    // @Test
+    // public void getClientByIdTest() {
+    //     targetBank.makeNewClient("Hocus", "Pas", 1);      // id 0
+    //     targetBank.makeNewClient("Tom", "Poes", 2);       // id 1
+    //     targetBank.makeNewClient("Olivier", "Bommel", 3); // id 2
+    //     Client bommel = targetBank.getClientById(2);
+    //     //        System.out.println(bank2.getBankBalance());
+    //     assertEquals(2, bommel.id);
+    // }
 
     @Test
     public void generateTwoAccountsWithBalance10EachGetBankBalance() {
@@ -62,16 +62,16 @@ public class BankTest {
 
         Client c1 = mock(Client.class);
         Client c2 = mock(Client.class);
+        //
+        // c1.account = a1;
+        // c2.account = a2;
 
-        c1.account = a1;
-        c2.account = a2;
-
-        targetBank.addClientToClientsList(c1);
-        targetBank.addClientToClientsList(c2);
+        targetBank.addClient(c1);
+        targetBank.addClient(c2);
 
 
-        when(c1.account.getBalance()).thenReturn(10d);
-        when(c2.account.getBalance()).thenReturn(10d);
+        // when(c1.account.getBalance()).thenReturn(10d);
+        // when(c2.account.getBalance()).thenReturn(10d);
         // ^ dit moet een functie zijn! niet een field!
 
         // System.out.println(targetBank.clients.get(0).account.balance);

@@ -33,7 +33,7 @@ public class ArrayLijsten {
         // printList(cn);
         // long[] metSum =sumOfNums(cn);
         // printList(metSum);
-        sudoku();
+        printSudoku(sudoku());
 
 
     }
@@ -107,7 +107,7 @@ public class ArrayLijsten {
         return base;
     }
 
-    void sudoku() {
+    int[][] sudoku() {
         ArrayList<Integer> base = randomEenTotNegen();
         int[][] grid = new int[3][3];
         for (int y = 0; y < grid.length; y++) {
@@ -116,6 +116,11 @@ public class ArrayLijsten {
             }
 
         }
+        return grid;
+    }
+
+    void printSudoku(int[][] grid) {
+
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {
                 System.out.print("| "+grid[x][y] + " ");
@@ -124,6 +129,6 @@ public class ArrayLijsten {
         }
         System.out.println();
 
-        System.out.println(grid[2][1]);
+        // System.out.println(grid[2][1]);
     }
 }

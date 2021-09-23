@@ -3,8 +3,8 @@ package nl.thom.bank;
 public class Account {
     double balance;
     double interestRate;
-    Client owner;
     int accountNumber;
+    Client owner;
 
     public Account() {
         // empty
@@ -36,10 +36,16 @@ public class Account {
         return balance;
     }
 
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+
     @Override
     public String toString() {
         return "Account{" +
                 "balance=" + balance +
+                ", accountNumber=" + accountNumber +
                 '}';
     }
 }

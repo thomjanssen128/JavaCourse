@@ -1,31 +1,42 @@
 package nl.thom.bank;
 
+import java.util.ArrayList;
+
 public class Client {
-    Bank bank;
     String firstName;
     String lastName;
     int id;
-    Account account;
+    ArrayList<Account> accounts = new ArrayList<>();
+    static int accountId = 100_000_000;
 
-    public Client(String firstName, String lastName, int id) {
-        this(firstName, lastName, id, 0);
+
+    public Client() {
+        this("UNKNOWNFIRSTNAME", "UNKNOWNLASTNAME");
     }
 
-    public Client(String firstName, String lastName, int id, double balance) {
+    public Client(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id = id;
-
-        account = new Account();
-        account.balance = balance;
+        //account.balance = balance;
     }
+
+    public void addAccount(Account acc) {
+        acc.setAccountNumber(accountId);
+        accountId++;
+        accounts.add(acc);
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
-                "firstName='" + firstName + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", id=" + id +
-                ", account=" + account +
+                ", accounts=" + accounts +
                 '}';
     }
 }
