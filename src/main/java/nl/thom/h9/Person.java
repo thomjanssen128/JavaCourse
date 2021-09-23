@@ -15,6 +15,7 @@ public class Person {
     public Person(String name, int age) {
         this(name, age, Gender.UNKNOWN);
     }
+
     public Person(String name, int age, Gender gender) {
         this.name = name;
         this.setAge(age);
