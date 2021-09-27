@@ -28,17 +28,17 @@ public class BankTest {
     //    }
 
 
-    @Test
-    public void make15ClientsAndGetIdNumbersZeroToFourteen() {
-        // test getAllClientIds
-        Bank bank1 = new Bank();
-        for (int id = 0; id < 15; id++) {
-
-            ;
-        }
-        ArrayList<Integer> ids = bank1.getAllClientIds();
-        assertEquals(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), ids);
-    }
+    // @Test
+    // public void make15ClientsAndGetIdNumbersZeroToFourteen() {
+    //     // test getAllClientIds
+    //     Bank bank1 = new Bank();
+    //     for (int id = 0; id < 15; id++) {
+    //         bank1.clients.add(Client c = new Client())
+    //         ;
+    //     }
+    //     ArrayList<Integer> ids = bank1.getAllClientIds();
+    //     assertEquals(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), ids);
+    // }
 
 
     // @Test
@@ -56,22 +56,22 @@ public class BankTest {
         Account a1 = mock(Account.class);
         Account a2 = mock(Account.class);
 
-        // a1.balance = 10;
-        // a2.balance = 10;
+        a1.balance = 10;
+        a2.balance = 10;
         // dit werkt ook
 
         Client c1 = mock(Client.class);
         Client c2 = mock(Client.class);
         //
-        // c1.account = a1;
-        // c2.account = a2;
+        c1.addAccount(a1);
+        c2.addAccount(a2);
 
         targetBank.addClient(c1);
         targetBank.addClient(c2);
 
 
-        // when(c1.account.getBalance()).thenReturn(10d);
-        // when(c2.account.getBalance()).thenReturn(10d);
+        when(c1.account.getBalance()).thenReturn(10d);
+        when(c2.account.getBalance()).thenReturn(10d);
         // ^ dit moet een functie zijn! niet een field!
 
         // System.out.println(targetBank.clients.get(0).account.balance);
