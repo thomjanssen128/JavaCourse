@@ -1,6 +1,4 @@
-package nl.thom.overerving;
-
-//import nl.thom.h7.PersonDiedException;
+package nl.thom.h14;
 
 public class Android extends Human implements Chargeable {
     public int level;
@@ -13,19 +11,19 @@ public class Android extends Human implements Chargeable {
         this(name, age, 0);
     }
 
-    public Android(String name, int age, int level) {
+   public Android(String name, int age, int level) {
         this.name = name;
         setAge(age);
         this.level = level;
-    }
+   }
 
-    @Override
-    public void setAge(int age) {
+   @Override
+   public void setAge(int age) {
         if (age > 100) {
             System.out.println("I'm old, not obsolete");
         }
         this.age = age;
-    }
+   }
 
     @Override
     public String greet() {
@@ -50,5 +48,4 @@ public class Android extends Human implements Chargeable {
                 ", age=" + age +
                 '}';
     }
-
 }
