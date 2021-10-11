@@ -1,4 +1,4 @@
-package nl.thom.overerving;
+package nl.thom.h13;
 
 import nl.thom.Gender;
 //import nl.thom.h7.PersonDiedException;
@@ -42,7 +42,7 @@ public class Person extends Human {
     public String toString() {
         // "Jan (45) is MALE".
         //return name + " (" + getAge() + ") is " + getGender();
-        return String.format("test %s (%d) is %s", name, age, gender);
+        return String.format("%s (%d) is %s", name, age, gender);
     }
 
 
@@ -66,15 +66,4 @@ public class Person extends Human {
     public String greet() {
         return "Hello, my name is " + name + ". Nice to meet you!";
     }
-
-    public Person createSubHuman() {
-        return new Person() {
-            @Override
-            public String greet() {
-                return "hoi";
-            }
-        };
-
-    }
-
 }
